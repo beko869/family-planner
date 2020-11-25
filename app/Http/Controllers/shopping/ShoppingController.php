@@ -16,9 +16,10 @@ class ShoppingController extends Controller
      */
     public function index()
     {
-        var_dump( Shopping::all() );
+        //var_dump( Shopping::all() );
+        $shoppingEntries = ShoppingEntry::orderBy( 'created_at', 'desc' )->get();
 
-        return view( 'shopping/shopping' );
+        return view( 'shopping/shopping', [ 'shoppingEntries' => $shoppingEntries ] );
     }
 
     /**
@@ -39,8 +40,17 @@ class ShoppingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //var_dump( $request );
+
+        $shoppingEntry = new ShoppingEntry();
+        $shoppingEntry->create([
+            'description' => $request->description,
+            'shopping_id' => 1
+        ]);
+
+        return redirect( '/shopping-list' );
     }
+
 
     /**
      * Display the specified resource.

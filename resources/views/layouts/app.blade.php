@@ -11,7 +11,19 @@
     </head>
     <body>
         <header>
-            me header
+            <nav class="navbar navbar-default container-fluid">
+                <h1 class="row w-100 justify-content-center nav-title mb-4">
+                    <div class="col-auto">
+                        Family Planner
+                    </div>
+                </h1>
+                <div class="row w-100 justify-content-center links ">
+                    <a href="/shopping-list">Shopping List</a>
+                    <a href="#">Calendar</a>
+                    <a href="#">Todos</a>
+                    <a href="#">Contacts</a>
+                </div>
+            </nav>
         </header>
         <main>
             <div class="container-fluid">
@@ -19,7 +31,13 @@
             </div> 
         </main>
         <footer>
-            me footer
+            <div class="container-fluid">
+                <div class="row justify-content-between">
+                    <div class="col-12 text-center">
+                        &copy; Papl - Benjamin Kowatsch
+                    </div>
+                </div>
+            </div>
         </footer>
         <script src="{{ asset('js/app.js') }}" async></script>
     </body>
